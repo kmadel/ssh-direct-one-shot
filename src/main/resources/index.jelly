@@ -1,0 +1,12 @@
+<?jelly escape-by-default='true'?>
+<!--
+  This view is used to render the installed plugins page.
+-->
+<div>
+  This plugin links the one-shot-executor plugin and the ssh-slaves plugin, allowing jobs to specify labels
+  of the form "ssh-direct:<host>:<user>:<password>:<java-path>:<working-dir>". When a job or node{}-clause is
+  tied to a label of this form this plugin will try to use the ssh-slaves plugin to dynamically add the given
+  host to the Jenkins instance as a slave. If adding the host fails the failure will be in the context of the
+  job that attempted to use the node (instead of the normal behavior of hanging the job until a node satisfies the
+  label). Once the job is completed the host will be removed from the Jenkins instance automatically.
+</div>
