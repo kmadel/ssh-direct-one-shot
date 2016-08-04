@@ -29,7 +29,7 @@ import java.nio.charset.Charset;
 import java.util.*;
 
 /**
- * Allows jobs to specify a label of the form 'ssh-direct:<host>:<user>:<password>:<javaPath>:<workDir>'
+ * Allows jobs to specify a label of the form 'ssh-direct:{host}:{user}:{password}:{javaPath}:{workDir}'
  * Which uses the ssh-slaves and one-shot-executor plugins to create a one-shot slave on the provided
  * host for the duration of the job. Mostly useful for running jobs on transient VMs created (and
  * destroyed) as part of a pipeline job.
