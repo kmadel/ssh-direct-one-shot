@@ -98,7 +98,7 @@ public class OneShotSshDirectProvisioner extends OneShotProvisioner<OneShotSlave
         LabelAtom atom = getRelevantAtom(buildableItem.getAssignedLabel()).get();
 
         String[] parts = atom.getDisplayName().split(":");
-        if (parts.length != 6) {
+        if (parts.length != 7) {
             throw new IllegalStateException("label does not match expected form: " + atom.getDisplayName());
         }
 
