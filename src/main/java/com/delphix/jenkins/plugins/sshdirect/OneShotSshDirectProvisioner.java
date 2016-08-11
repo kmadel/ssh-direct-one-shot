@@ -107,9 +107,10 @@ public class OneShotSshDirectProvisioner extends OneShotProvisioner<OneShotSlave
         final String password = parts[3];
         String javaPath = parts[4];
         String jenkinsdir = parts[5];
+        String launcherPrefix = parts[6];
 
         StandardUsernameCredentials creds = new SimpleUsernamePasswordCredentials(username, password);
-        SSHLauncher launcher = new SSHLauncher(host, 22, creds, "", javaPath, "", "", 5000, 5, 5000) {
+        SSHLauncher launcher = new SSHLauncher(host, 22, creds, "", javaPath, launcherPrefix, "", 5000, 5, 5000) {
             /**
              * This function is a shim to work around JENKINS-37115.
              *
