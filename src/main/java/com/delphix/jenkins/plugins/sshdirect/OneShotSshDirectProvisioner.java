@@ -98,7 +98,7 @@ public class OneShotSshDirectProvisioner extends OneShotProvisioner<OneShotSlave
         LabelAtom atom = getRelevantAtom(buildableItem.getAssignedLabel()).get();
 
         String[] parts = atom.getDisplayName().split(":");
-        if (parts.length != 7) {
+        if (parts.length != 8) {
             throw new IllegalStateException("label does not match expected form: " + atom.getDisplayName());
         }
 
@@ -108,9 +108,10 @@ public class OneShotSshDirectProvisioner extends OneShotProvisioner<OneShotSlave
         String javaPath = parts[4];
         String jenkinsdir = parts[5];
         String launcherPrefix = parts[6];
+        String launcherSuffix = parts[7];
 
         StandardUsernameCredentials creds = new SimpleUsernamePasswordCredentials(username, password);
-        SSHLauncher launcher = new SSHLauncher(host, 22, creds, "", javaPath, launcherPrefix + " ", "", 5000, 5, 5000) {
+        SSHLauncher launcher = new SSHLauncher(host, 22, creds, "", javaPath, launcherPrefix + " ", " " + launcherSuffix, 5000, 5, 5000) {
             /**
              * This function is a shim to work around JENKINS-37115.
              *
