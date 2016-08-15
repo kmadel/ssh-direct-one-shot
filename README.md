@@ -4,7 +4,7 @@ Usage
 Installing this plugin automatically makes your Jenkins instance
 resolve node labels of the form:
 
-ssh-direct:<hostname>:<user>:<password>:<javaBinary>:<jenkinsWorkDir>:<launcherPrefix>:<launcherSuffix>
+ssh-direct:{hostname}:{user}:{password}:{javaBinary}:{jenkinsWorkDir}:{launcherPrefix}:{launcherSuffix}
 
 By automatically adding a new node to Jenkins using the
 https://wiki.jenkins-ci.org/display/JENKINS/SSH+Slaves+plugin
